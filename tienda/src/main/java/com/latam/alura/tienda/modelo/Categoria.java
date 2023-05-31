@@ -15,17 +15,12 @@ public class Categoria {
 	private Long id;
 	private String nombre;
 	
-	//Constructor default
-	public Categoria() {
-		
-	}
+	public Categoria() {}
 
-	//Constructor
 	public Categoria(String nombre) {
 		this.nombre = nombre;
 	}
 	
-	//Getters and Setters
 	public Long getId() {
 		return id;
 	}
@@ -39,7 +34,5 @@ public class Categoria {
 		this.nombre = nombre;
 	}
 	
-	
-	
-	
+
 }

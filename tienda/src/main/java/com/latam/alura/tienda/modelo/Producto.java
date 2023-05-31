@@ -4,8 +4,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,40 +12,35 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="productos")
-public class Producto {
-	
+public class Producto{
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	
+	
 	private String nombre;
 	private String descripcion;
 	private BigDecimal precio;
-	private LocalDate fechaDeRegistro = LocalDate.now();
+	private LocalDate fechaDeRegistro= LocalDate.now();
 	
 	@ManyToOne
 	private Categoria categoria;
+
 	
-	//Constructor default
 	public Producto() {
 		
 	}
-
-	//Constructor
 	public Producto(String nombre, String descripcion, BigDecimal precio, Categoria categoria) {
-		super();
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.categoria = categoria;
 	}
-	
-	//Getters and Setters
 	public Long getId() {
 		return id;
 	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -66,7 +59,4 @@ public class Producto {
 	public void setPrecio(BigDecimal precio) {
 		this.precio = precio;
 	}
-	
-	
-
 }
